@@ -1,4 +1,4 @@
-# 🦊 PDFox - Complete PDF Utility App for Android
+# PDFox - Complete PDF Utility App for Android
 
 [![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)]()
 [![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white)]()
@@ -7,11 +7,11 @@
 [![Target SDK](https://img.shields.io/badge/Target%20SDK-34-blue.svg)]()
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> **PDFox** is a full-featured native Android PDF utility app that replicates the complete functionality of **ilovepdf.com** — redesigned with Material You (Material Design 3) principles, following Google-style UI patterns similar to Google Drive, Google Docs, and Google Photos.
+> **PDFox** is a full-featured native Android PDF utility app that replicates the complete functionality of **ilovepdf.com**, redesigned with Material You (Material Design 3) principles, following Google-style UI patterns similar to Google Drive, Google Docs, and Google Photos.
 
 ---
 
-## 📱 Screenshots
+## Screenshots
 
 | Home Screen | Tool Selection | Processing | Result |
 |:-----------:|:--------------:|:----------:|:------:|
@@ -19,9 +19,9 @@
 
 ---
 
-## ✨ Features — 25 Complete PDF Tools
+## Features - 25 Complete PDF Tools
 
-### 🗂️ Organize
+### Organize
 | # | Tool | Description |
 |---|------|-------------|
 | 1 | **Merge PDF** | Combine multiple PDFs into one with drag-to-reorder |
@@ -30,12 +30,12 @@
 | 4 | **Extract Pages** | Select and extract specific pages |
 | 5 | **Organize Pages** | Reorder and rotate individual pages |
 
-### ⚡ Optimize
+### Optimize
 | # | Tool | Description |
 |---|------|-------------|
 | 6 | **Compress PDF** | Reduce file size while keeping quality |
 
-### 🔄 Convert (FROM PDF)
+### Convert (FROM PDF)
 | # | Tool | Description |
 |---|------|-------------|
 | 7 | **PDF to Word** | Convert PDF to editable DOCX |
@@ -44,7 +44,7 @@
 | 10 | **PDF to Image** | Export pages as JPG/PNG (zipped) |
 | 11 | **PDF to PDF/A** | Convert to archival PDF/A format |
 
-### 🔄 Convert (TO PDF)
+### Convert (TO PDF)
 | # | Tool | Description |
 |---|------|-------------|
 | 12 | **Word to PDF** | Convert DOC/DOCX to PDF |
@@ -53,7 +53,7 @@
 | 15 | **Image to PDF** | Convert JPG/PNG/BMP/WEBP to PDF |
 | 16 | **HTML to PDF** | Convert web pages to PDF |
 
-### 🔒 Security
+### Security
 | # | Tool | Description |
 |---|------|-------------|
 | 17 | **Protect PDF** | Add password encryption (128/256-bit) |
@@ -61,10 +61,10 @@
 | 19 | **Sign PDF** | Draw and embed your signature |
 | 20 | **Redact PDF** | Permanently remove sensitive information |
 
-### ✏️ Edit
+### Edit
 | # | Tool | Description |
 |---|------|-------------|
-| 21 | **Rotate PDF** | Change page orientation (90°/180°) |
+| 21 | **Rotate PDF** | Change page orientation (90/180 degrees) |
 | 22 | **Add Page Numbers** | Number your PDF pages |
 | 23 | **Add Watermark** | Overlay text watermark on pages |
 | 24 | **Edit Metadata** | Modify PDF title, author, keywords |
@@ -72,75 +72,75 @@
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
-┌─────────────────────────────────────────────────────┐
-│                    Presentation Layer                │
-│  ┌───────────┐  ┌───────────┐  ┌─────────────────┐ │
-│  │ Fragments │  │  Adapters  │  │  Custom Views    │ │
-│  │  (XML UI) │  │(RecyclerView)│  │ (SignatureView) │ │
-│  └─────┬─────┘  └───────────┘  └─────────────────┘ │
-│        │                                            │
-│  ┌─────┴─────────────────────────────────────┐     │
-│  │            ViewModels (Hilt)               │     │
-│  │  ┌──────────────┐  ┌──────────────────┐   │     │
-│  │  │ BaseToolVM   │  │ ToolSpecificVMs  │   │     │
-│  │  │ (25 tools)   │  │ (@HiltViewModel) │   │     │
-│  │  └──────┬───────┘  └────────┬─────────┘   │     │
-│  └─────────┼───────────────────┼─────────────┘     │
-├────────────┼───────────────────┼───────────────────┤
-│            │      Domain Layer │                   │
-│  ┌─────────┴───────────────────┴─────────────┐     │
-│  │         ToolProcessor (Factory)            │     │
-│  │  ┌────┐ ┌────┐ ┌────┐ ┌────┐ ┌────┐      │     │
-│  │  │Merge│ │Split│ │Comp │ │Conv│ │Sec │ ...│     │
-│  │  └────┘ └────┘ └────┘ └────┘ └────┘      │     │
-│  └─────────────────┬─────────────────────────┘     │
-├────────────────────┼───────────────────────────────┤
-│                    │      Data Layer               │
-│  ┌─────────────────┴─────────────────────────┐     │
-│  │          FileRepository (Hilt)             │     │
-│  │  ┌──────────────┐  ┌──────────────────┐   │     │
-│  │  │  Room DAO    │  │   FileManager     │   │     │
-│  │  │ RecentFiles  │  │  (IO Operations)  │   │     │
-│  │  └──────┬───────┘  └────────┬─────────┘   │     │
-│  └─────────┼───────────────────┼─────────────┘     │
-├─────────────┼───────────────────┼───────────────────┤
-│  ┌──────────┴──────┐  ┌────────┴──────────────┐   │
-│  │  AppDatabase     │  │  External Storage     │   │
-│  │  (Recent Files)  │  │  (PDFox/ folder)      │   │
-│  └─────────────────┘  └───────────────────────┘   │
-└─────────────────────────────────────────────────────┘
++-----------------------------------------------------+
+|                    Presentation Layer                |
+|  +-----------+  +-----------+  +-----------------+  |
+|  | Fragments |  |  Adapters  |  |  Custom Views    | |
+|  |  (XML UI) |  |(RecyclerView)|  | (SignatureView) | |
+|  +-----+-----+  +-----------+  +-----------------+  |
+|        |                                            |
+|  +-----+-----------------------------------------+  |
+|  |            ViewModels (Hilt)                  |  |
+|  |  +--------------+  +------------------+       |  |
+|  |  | BaseToolVM   |  | ToolSpecificVMs  |       |  |
+|  |  | (25 tools)   |  | (@HiltViewModel) |       |  |
+|  |  +------+-------+  +--------+---------+       |  |
+|  +-------+-----------------------+---------------+  |
++-----------+-----------------------+-----------------+
+|            |      Domain Layer    |                 |
+|  +---------+-----------------------+-------------+  |
+|  |         ToolProcessor (Factory)              |  |
+|  |  +----+ +----+ +----+ +----+ +----+         |  |
+|  |  |Merge| |Split| |Comp | |Conv | |Sec | ...|  |
+|  |  +----+ +----+ +----+ +----+ +----+         |  |
+|  +-----------------+---------------------------+  |
++--------------------+------------------------------+
+|                    |      Data Layer              |
+|  +-----------------+--------------------------+    |
+|  |          FileRepository (Hilt)             |    |
+|  |  +--------------+  +------------------+    |    |
+|  |  |  Room DAO    |  |   FileManager     |    |    |
+|  |  | RecentFiles  |  |  (IO Operations)  |    |    |
+|  |  +------+-------+  +--------+---------+    |    |
+|  +-------+-----------------------+------------+    |
++-----------+-----------------------+---------------+
+|  +----------+------+  +----------+------------+   |
+|  |  AppDatabase     |  |  External Storage    |   |
+|  |  (Recent Files)  |  |  (PDFox/ folder)     |   |
+|  +------------------+  +----------------------+   |
++---------------------------------------------------+
 ```
 
 ### Design Patterns
-- **MVVM (Model-View-ViewModel)** — Clean separation of concerns
-- **Repository Pattern** — Unified data access layer
-- **Factory Pattern** — ToolProcessor factory for 25 tools
-- **Dependency Injection** — Hilt (Dagger) for all layers
-- **Single Activity Architecture** — Jetpack Navigation Component
+- **MVVM (Model-View-ViewModel)** - Clean separation of concerns
+- **Repository Pattern** - Unified data access layer
+- **Factory Pattern** - ToolProcessor factory for 25 tools
+- **Dependency Injection** - Hilt (Dagger) for all layers
+- **Single Activity Architecture** - Jetpack Navigation Component
 
 ---
 
-## 🎨 Design System
+## Design System
 
 ### Color Palette (Material You)
 | Color | Hex | Usage |
 |-------|-----|-------|
-| 🔵 Primary | `#1A73E8` | Google Blue — Primary actions, navigation |
-| 🔴 Secondary | `#EA4335` | Google Red — PDF/danger actions |
-| 🟢 Tertiary | `#34A853` | Google Green — Success states |
-| 🟡 Warning | `#FBBC04` | Google Yellow — Warnings |
-| ⚫ Surface | `#FFFFFF` | Card backgrounds, surfaces |
-| ⚪ Background | `#F8F9FA` | App background |
+| Primary | `#1A73E8` | Google Blue - Primary actions, navigation |
+| Secondary | `#EA4335` | Google Red - PDF/danger actions |
+| Tertiary | `#34A853` | Google Green - Success states |
+| Warning | `#FBBC04` | Google Yellow - Warnings |
+| Surface | `#FFFFFF` | Card backgrounds, surfaces |
+| Background | `#F8F9FA` | App background |
 
 ### Category Accent Colors
-- 🗂️ **Organize**: `#1A73E8` (Blue)
-- ⚡ **Optimize**: `#FBBC04` (Yellow)
-- 🔄 **Convert**: `#34A853` (Green)
-- 🔒 **Security**: `#EA4335` (Red)
-- ✏️ **Edit**: `#9C27B0` (Purple)
+- **Organize**: `#1A73E8` (Blue)
+- **Optimize**: `#FBBC04` (Yellow)
+- **Convert**: `#34A853` (Green)
+- **Security**: `#EA4335` (Red)
+- **Edit**: `#9C27B0` (Purple)
 
 ### Typography
 - **Headings**: Google Sans (fallback: Roboto)
@@ -156,7 +156,7 @@
 
 ---
 
-## 📦 Tech Stack
+## Tech Stack
 
 | Category | Technology |
 |----------|------------|
@@ -180,85 +180,83 @@
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 app/src/main/java/com/pdfox/app/
-├── PDfoxApplication.kt              # Application entry point
-├── di/                              # Dependency Injection
-│   ├── DatabaseModule.kt            # Room providers
-│   └── FileModule.kt                # Repository & FileManager
-├── data/                            # Data Layer
-│   ├── db/
-│   │   ├── AppDatabase.kt           # Room database
-│   │   ├── RecentFile.kt            # Entity
-│   │   └── RecentFileDao.kt         # DAO with Flow
-│   └── repository/
-│       └── FileRepository.kt        # Unified data access
-├── domain/                          # Domain Layer (future use cases)
-├── ui/                              # Presentation Layer
-│   ├── MainActivity.kt              # Single Activity + Bottom Nav
-│   ├── home/
-│   │   ├── HomeFragment.kt          # Tool grid + search + chips
-│   │   ├── HomeViewModel.kt         # Tools list + filtering
-│   │   ├── ToolAdapter.kt           # RecyclerView adapter
-│   │   ├── ToolItem.kt              # Data class
-│   │   └── ToolSelectionFragment.kt # Category browsing
-│   ├── recent/
-│   │   ├── RecentFragment.kt        # Recent files list
-│   │   ├── RecentViewModel.kt       # Room Flow collection
-│   │   └── RecentFileAdapter.kt     # Swipe-to-delete adapter
-│   ├── settings/
-│   │   └── SettingsFragment.kt      # PreferenceFragmentCompat
-│   ├── processing/
-│   │   ├── ProcessingFragment.kt    # Processing screen
-│   │   └── ToolProcessor.kt         # 25 tool implementations
-│   ├── result/
-│   │   └── ResultFragment.kt        # Result screen (reusable)
-│   ├── viewer/
-│   │   ├── PdfViewerFragment.kt     # Built-in PDF viewer
-│   │   └── PdfPageAdapter.kt        # Page renderer + zoom
-│   └── tools/                       # Individual Tool Screens
-│       ├── BaseToolFragment.kt      # Base file picker
-│       ├── BaseToolViewModel.kt     # Base processing logic
-│       ├── ToolUiState.kt           # Sealed UI state
-│       ├── ToolOptionsFragment.kt   # Generic options screen
-│       ├── compress/
-│       ├── compress/CompressFragment.kt
-│       ├── compress/CompressViewModel.kt
-│       ├── merge/                   # (5 files)
-│       ├── split/                   # (2 files)
-│       ├── removepages/             # (3 files)
-│       ├── extractpages/            # (3 files)
-│       ├── organizepages/           # (5 files)
-│       ├── pdftoword/               # (2 files)
-│       ├── pdftoppt/                # (2 files)
-│       ├── pdftoexcel/              # (2 files)
-│       ├── pdftoimage/              # (2 files)
-│       ├── pdftopdfa/               # (2 files)
-│       ├── wordtopdf/               # (2 files)
-│       ├── ppttopdf/                # (2 files)
-│       ├── exceltopdf/              # (2 files)
-│       ├── imagetopdf/              # (2 files)
-│       ├── htmltopdf/               # (2 files)
-│       ├── protect/                 # (2 files)
-│       ├── unlock/                  # (2 files)
-│       ├── sign/                    # (2 files)
-│       ├── redact/                  # (2 files)
-│       ├── rotate/                  # (2 files)
-│       ├── pagenumbers/             # (2 files)
-│       ├── watermark/               # (2 files)
-│       ├── metadata/                # (2 files)
-│       └── repair/                  # (2 files)
-└── util/                            # Utilities
-    ├── FileManager.kt               # File I/O, thumbnails, conversions
-    ├── Extensions.kt                # Kotlin extensions + colors
-    └── Result.kt                    # Sealed Result class
++-- PDfoxApplication.kt              # Application entry point
++-- di/                              # Dependency Injection
+|   +-- DatabaseModule.kt            # Room providers
+|   +-- FileModule.kt                # Repository + FileManager
++-- data/                            # Data Layer
+|   +-- db/
+|   |   +-- AppDatabase.kt           # Room database
+|   |   +-- RecentFile.kt            # Entity
+|   |   +-- RecentFileDao.kt         # DAO with Flow
+|   +-- repository/
+|       +-- FileRepository.kt        # Unified data access
++-- domain/                          # Domain Layer (future use cases)
++-- ui/                              # Presentation Layer
+|   +-- MainActivity.kt              # Single Activity + Bottom Nav
+|   +-- home/
+|   |   +-- HomeFragment.kt          # Tool grid + search + chips
+|   |   +-- HomeViewModel.kt         # Tools list + filtering
+|   |   +-- ToolAdapter.kt           # RecyclerView adapter
+|   |   +-- ToolItem.kt              # Data class
+|   |   +-- ToolSelectionFragment.kt # Category browsing
+|   +-- recent/
+|   |   +-- RecentFragment.kt        # Recent files list
+|   |   +-- RecentViewModel.kt       # Room Flow collection
+|   |   +-- RecentFileAdapter.kt     # Swipe-to-delete adapter
+|   +-- settings/
+|   |   +-- SettingsFragment.kt      # PreferenceFragmentCompat
+|   +-- processing/
+|   |   +-- ProcessingFragment.kt    # Processing screen
+|   |   +-- ToolProcessor.kt         # 25 tool implementations
+|   +-- result/
+|   |   +-- ResultFragment.kt        # Result screen (reusable)
+|   +-- viewer/
+|   |   +-- PdfViewerFragment.kt     # Built-in PDF viewer
+|   |   +-- PdfPageAdapter.kt        # Page renderer + zoom
+|   +-- tools/                       # Individual Tool Screens
+|       +-- BaseToolFragment.kt      # Base file picker
+|       +-- BaseToolViewModel.kt     # Base processing logic
+|       +-- ToolUiState.kt           # Sealed UI state
+|       +-- ToolOptionsFragment.kt   # Generic options screen
+|       +-- compress/
+|       +-- merge/                   # (4 files)
+|       +-- split/                   # (2 files)
+|       +-- removepages/             # (4 files)
+|       +-- extractpages/            # (4 files)
+|       +-- organizepages/           # (5 files)
+|       +-- pdftoword/               # (2 files)
+|       +-- pdftoppt/                # (2 files)
+|       +-- pdftoexcel/              # (2 files)
+|       +-- pdftoimage/              # (2 files)
+|       +-- pdftopdfa/               # (2 files)
+|       +-- wordtopdf/               # (2 files)
+|       +-- ppttopdf/                # (2 files)
+|       +-- exceltopdf/              # (2 files)
+|       +-- imagetopdf/              # (2 files)
+|       +-- htmltopdf/               # (2 files)
+|       +-- protect/                 # (2 files)
+|       +-- unlock/                  # (2 files)
+|       +-- sign/                    # (2 files)
+|       +-- redact/                  # (2 files)
+|       +-- rotate/                  # (2 files)
+|       +-- pagenumbers/             # (2 files)
+|       +-- watermark/               # (2 files)
+|       +-- metadata/                # (2 files)
+|       +-- repair/                  # (2 files)
++-- util/                            # Utilities
+    +-- FileManager.kt               # File I/O, thumbnails, conversions
+    +-- Extensions.kt                # Kotlin extensions + colors
+    +-- Result.kt                    # Sealed Result class
 ```
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - **Android Studio** Hedgehog (2023.1.1) or newer
@@ -275,18 +273,18 @@ app/src/main/java/com/pdfox/app/
    ```
 
 2. **Open in Android Studio**
-   - File → Open → Select the project directory
+   - File > Open > Select the project directory
    - Wait for Gradle sync to complete
 
 3. **Build the project**
    ```bash
    ./gradlew assembleDebug
    ```
-   Or use **Build → Make Project** in Android Studio (Ctrl+F9 / Cmd+F9)
+   Or use **Build > Make Project** in Android Studio (Ctrl+F9 / Cmd+F9)
 
 4. **Run on device/emulator**
    - Connect an Android device (SDK 24+) or start an emulator
-   - Click **Run → Run 'app'** (Shift+F10)
+   - Click **Run > Run 'app'** (Shift+F10)
 
 ### Building from Command Line
 
@@ -306,35 +304,35 @@ app/src/main/java/com/pdfox/app/
 
 ---
 
-## 🧩 Key Features Deep-Dive
+## Key Features Deep-Dive
 
-### 🏠 Home Screen
+### Home Screen
 - **Greeting**: "What would you like to do?"
 - **Search Bar**: Real-time tool filtering by name/description
 - **Category Chips**: Single-select filtering (All, Organize, Optimize, Convert, Security, Edit)
 - **Tool Grid**: 2-column staggered layout with colored accent borders per category
 - **25 Tools**: Each with icon, name, and description
 
-### 📁 Recent Files
+### Recent Files
 - **Room Database**: Stores last 20 processed files
 - **Thumbnails**: First page rendered via PdfRenderer
 - **Swipe-to-Delete**: With undo Snackbar
 - **Tap to Preview**: Opens built-in PDF viewer
 
-### ⚙️ Settings
+### Settings
 - **Theme Toggle**: Light / Dark / System Default
 - **Save Location**: Default output directory picker
 - **About**: Version, privacy policy, licenses
 
-### 🔍 Built-in PDF Viewer
+### Built-in PDF Viewer
 - **PdfRenderer**: Native Android rendering
 - **Pinch-to-Zoom**: Matrix-based image scaling
 - **Page Indicator**: "3 / 12" floating chip
-- **Share & Download**: From app bar actions
+- **Share and Download**: From app bar actions
 
 ---
 
-## 🔐 Permissions
+## Permissions
 
 | Permission | Max SDK | Purpose |
 |------------|---------|---------|
@@ -347,7 +345,7 @@ All permissions are requested at runtime using Dexter library. FileProvider is u
 
 ---
 
-## 📊 Database Schema
+## Database Schema
 
 ### RecentFile Table
 | Column | Type | Description |
@@ -366,7 +364,7 @@ All permissions are requested at runtime using Dexter library. FileProvider is u
 
 ---
 
-## 🛠️ Customization
+## Customization
 
 ### Changing Colors
 Edit `app/src/main/res/values/colors.xml`:
@@ -385,7 +383,7 @@ Edit `app/src/main/res/values/colors.xml`:
 
 ---
 
-## 📈 Performance
+## Performance
 
 - **Coroutines**: All file I/O runs on `Dispatchers.IO`
 - **ViewBinding**: Zero `findViewById` overhead
@@ -395,27 +393,27 @@ Edit `app/src/main/res/values/colors.xml`:
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 | Issue | Solution |
 |-------|----------|
 | Gradle sync fails | Update Android Studio to latest version |
 | Build fails with `kapt` error | Ensure KSP plugin version matches Kotlin version |
 | PDFBox crashes | Check ProGuard rules include PDFBox keep rules |
-| File picker doesn't show files | Grant storage permissions in device settings |
+| File picker does not show files | Grant storage permissions in device settings |
 | Dark theme not applying | Check `AppCompatDelegate.setDefaultNightMode()` in Settings |
 
 ---
 
-## 📝 License
+## License
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome. Please feel free to submit a Pull Request.
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -425,24 +423,24 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
 
-## 📧 Contact
+## Contact
 
 - **Repository**: [GitHub](https://github.com/ash10000000000/I-love-pdf-clone-mobile-app-for-android)
 - **Issues**: [Bug Reports](https://github.com/ash10000000000/I-love-pdf-clone-mobile-app-for-android/issues)
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
-- [Apache PDFBox](https://pdfbox.apache.org/) — PDF manipulation engine
-- [Apache POI](https://poi.apache.org/) — Office format support
-- [Material Design 3](https://m3.material.io/) — Design system
-- [Lottie](https://airbnb.design/lottie/) — Animations
-- [ilovepdf.com](https://www.ilovepdf.com/) — Feature inspiration
+- [Apache PDFBox](https://pdfbox.apache.org/) - PDF manipulation engine
+- [Apache POI](https://poi.apache.org/) - Office format support
+- [Material Design 3](https://m3.material.io/) - Design system
+- [Lottie](https://airbnb.design/lottie/) - Animations
+- [ilovepdf.com](https://www.ilovepdf.com/) - Feature inspiration
 
 ---
 
 <div align="center">
-  <strong>Made with ❤️ and ☕</strong><br>
+  <strong>Made with care</strong><br>
   <sub>Built with Kotlin, Material Design 3, and PdfBox-Android</sub>
 </div>
