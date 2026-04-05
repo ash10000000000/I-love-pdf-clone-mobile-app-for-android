@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Name -->
+    <string name="app_name">PDFox</string>
+    
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_recent">Recent</string>
+    <string name="nav_settings">Settings</string>
+    
+    <!-- Home Screen -->
+    <string name="greeting">What would you like to do?</string>
+    <string name="search_tools">Search tools…</string>
+    <string name="category_all">All</string>
+    <string name="category_organize">Organize</string>
+    <string name="category_optimize">Optimize</string>
+    <string name="category_convert">Convert</string>
+    <string name="category_security">Security</string>
+    <string name="category_edit">Edit</string>
+    
+    <!-- Tool Names -->
+    <string name="tool_merge">Merge PDF</string>
+    <string name="tool_merge_desc">Combine multiple PDFs into one</string>
+    
+    <string name="tool_split">Split PDF</string>
+    <string name="tool_split_desc">Extract pages or split by range</string>
+    
+    <string name="tool_remove_pages">Remove Pages</string>
+    <string name="tool_remove_pages_desc">Delete unwanted pages from PDF</string>
+    
+    <string name="tool_extract_pages">Extract Pages</string>
+    <string name="tool_extract_pages_desc">Select and extract specific pages</string>
+    
+    <string name="tool_organize_pages">Organize Pages</string>
+    <string name="tool_organize_pages_desc">Reorder, rotate pages</string>
+    
+    <string name="tool_compress">Compress PDF</string>
+    <string name="tool_compress_desc">Reduce file size while keeping quality</string>
+    
+    <string name="tool_pdf_to_word">PDF to Word</string>
+    <string name="tool_pdf_to_word_desc">Convert PDF to DOCX</string>
+    
+    <string name="tool_pdf_to_ppt">PDF to PowerPoint</string>
+    <string name="tool_pdf_to_ppt_desc">Convert PDF to PPTX</string>
+    
+    <string name="tool_pdf_to_excel">PDF to Excel</string>
+    <string name="tool_pdf_to_excel_desc">Convert PDF to XLSX</string>
+    
+    <string name="tool_pdf_to_image">PDF to Image</string>
+    <string name="tool_pdf_to_image_desc">Export pages as JPG/PNG</string>
+    
+    <string name="tool_pdf_to_pdfa">PDF to PDF/A</string>
+    <string name="tool_pdf_to_pdfa_desc">Convert to archival format</string>
+    
+    <string name="tool_word_to_pdf">Word to PDF</string>
+    <string name="tool_word_to_pdf_desc">Convert DOC/DOCX to PDF</string>
+    
+    <string name="tool_ppt_to_pdf">PowerPoint to PDF</string>
+    <string name="tool_ppt_to_pdf_desc">Convert PPT/PPTX to PDF</string>
+    
+    <string name="tool_excel_to_pdf">Excel to PDF</string>
+    <string name="tool_excel_to_pdf_desc">Convert XLS/XLSX to PDF</string>
+    
+    <string name="tool_image_to_pdf">Image to PDF</string>
+    <string name="tool_image_to_pdf_desc">Convert images to PDF</string>
+    
+    <string name="tool_html_to_pdf">HTML to PDF</string>
+    <string name="tool_html_to_pdf_desc">Convert web pages to PDF</string>
+    
+    <string name="tool_protect">Protect PDF</string>
+    <string name="tool_protect_desc">Add password encryption</string>
+    
+    <string name="tool_unlock">Unlock PDF</string>
+    <string name="tool_unlock_desc">Remove password protection</string>
+    
+    <string name="tool_sign">Sign PDF</string>
+    <string name="tool_sign_desc">Add your signature</string>
+    
+    <string name="tool_redact">Redact PDF</string>
+    <string name="tool_redact_desc">Remove sensitive information</string>
+    
+    <string name="tool_rotate">Rotate PDF</string>
+    <string name="tool_rotate_desc">Change page orientation</string>
+    
+    <string name="tool_page_numbers">Add Page Numbers</string>
+    <string name="tool_page_numbers_desc">Number your pages</string>
+    
+    <string name="tool_watermark">Add Watermark</string>
+    <string name="tool_watermark_desc">Overlay text or image watermark</string>
+    
+    <string name="tool_metadata">Edit Metadata</string>
+    <string name="tool_metadata_desc">Modify PDF properties</string>
+    
+    <string name="tool_repair">Repair PDF</string>
+    <string name="tool_repair_desc">Fix corrupted PDF files</string>
+    
+    <!-- Common UI Strings -->
+    <string name="select_file">Select File</string>
+    <string name="from_recent">From Recent</string>
+    <string name="select_pdf_file">Select PDF file</string>
+    <string name="or_drag_drop">or drag and drop here</string>
+    <string name="supported_formats">Supported formats</string>
+    <string name="process">Process</string>
+    <string name="processing">Processing your file…</string>
+    <string name="cancel">Cancel</string>
+    <string name="done">Done!</string>
+    <string name="download_save">Download / Save</string>
+    <string name="share">Share</string>
+    <string name="preview">Preview</string>
+    <string name="process_another">Process Another File</string>
+    <string name="back">Back</string>
+    <string name="delete">Delete</string>
+    <string name="undo">Undo</string>
+    <string name="retry">Retry</string>
+    <string name="file_deleted">File deleted</string>
+    <string name="error_occurred">An error occurred</string>
+    <string name="no_recent_files">No recent files yet</string>
+    <string name="no_recent_files_desc">Your recently processed files will appear here</string>
+    <string name="page_count">%1$d pages</string>
+    <string name="file_size">%1$s</string>
+    <string name="output_file">Output File</string>
+    <string name="pages">%1$d pages</string>
+    <string name="filename">Filename</string>
+    
+    <!-- Error Messages -->
+    <string name="error_file_not_found">File not found</string>
+    <string name="error_invalid_file">Invalid file format</string>
+    <string name="error_processing_failed">Processing failed</string>
+    <string name="error_no_internet">No internet connection</string>
+    <string name="error_permission_denied">Permission denied</string>
+    <string name="error_storage_full">Storage is full</string>
+    <string name="error_file_too_large">File is too large</string>
+    <string name="error_password_incorrect">Incorrect password</string>
+    
+    <!-- Settings -->
+    <string name="settings_appearance">Appearance</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_theme_summary">Choose light, dark, or system theme</string>
+    <string name="settings_storage">Storage</string>
+    <string name="settings_save_location">Default save location</string>
+    <string name="settings_save_location_summary">Choose where files are saved</string>
+    <string name="settings_about">About</string>
+    <string name="settings_version">Version</string>
+    <string name="settings_privacy">Privacy Policy</string>
+    <string name="settings_licenses">Licenses</string>
+    
+    <!-- Theme Options -->
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_system">System Default</string>
+    
+    <!-- PDF Viewer -->
+    <string name="pdf_viewer_page">%1$d / %2$d</string>
+    <string name="pdf_viewer_zoom_in">Zoom in</string>
+    <string name="pdf_viewer_zoom_out">Zoom out</string>
+    
+    <!-- Permissions -->
+    <string name="permission_storage_rationale">PDFox needs storage permission to save processed files</string>
+    <string name="permission_manage_storage_rationale">PDFox needs access to manage files on your device</string>
+</resources>

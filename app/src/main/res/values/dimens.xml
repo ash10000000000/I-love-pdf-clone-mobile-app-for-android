@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spacing & Padding -->
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_medium">16dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+    
+    <!-- Card & Component Sizes -->
+    <dimen name="card_corner_radius">16dp</dimen>
+    <dimen name="button_corner_radius">24dp</dimen>
+    <dimen name="bottom_sheet_corner_radius">28dp</dimen>
+    <dimen name="tool_card_corner_radius">12dp</dimen>
+    <dimen name="tool_item_corner_radius">12dp</dimen>
+    <dimen name="fab_corner_radius">16dp</dimen>
+    <dimen name="upload_zone_corner_radius">16dp</dimen>
+    
+    <!-- Elevation -->
+    <dimen name="elevation_card">1dp</dimen>
+    <dimen name="elevation_fab">6dp</dimen>
+    <dimen name="elevation_app_bar">4dp</dimen>
+    
+    <!-- Tool Card -->
+    <dimen name="tool_card_icon_size">48dp</dimen>
+    <dimen name="tool_card_icon_bg_size">64dp</dimen>
+    <dimen name="tool_card_accent_width">4dp</dimen>
+    
+    <!-- Upload Zone -->
+    <dimen name="upload_zone_icon_size">120dp</dimen>
+    <dimen name="upload_zone_border_width">2dp</dimen>
+    
+    <!-- Thumbnail Sizes -->
+    <dimen name="file_thumbnail_size">48dp</dimen>
+    <dimen name="page_thumbnail_width">120dp</dimen>
+    <dimen name="page_thumbnail_height">170dp</dimen>
+    
+    <!-- PDF Viewer -->
+    <dimen name="pdf_page_margin">16dp</dimen>
+    
+    <!-- Bottom Navigation -->
+    <dimen name="bottom_nav_height">80dp</dimen>
+</resources>

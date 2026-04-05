@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <!-- Main Tabs -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.pdfox.app.ui.home.HomeFragment"
+        android:label="@string/nav_home"
+        tools:layout="@layout/fragment_home">
+        <action android:id="@+id/action_home_to_merge" app:destination="@id/mergeFragment" />
+        <action android:id="@+id/action_home_to_split" app:destination="@id/splitFragment" />
+        <action android:id="@+id/action_home_to_remove_pages" app:destination="@id/removePagesFragment" />
+        <action android:id="@+id/action_home_to_extract_pages" app:destination="@id/extractPagesFragment" />
+        <action android:id="@+id/action_home_to_organize_pages" app:destination="@id/organizePagesFragment" />
+        <action android:id="@+id/action_home_to_compress" app:destination="@id/compressFragment" />
+        <action android:id="@+id/action_home_to_pdf_to_word" app:destination="@id/pdfToWordFragment" />
+        <action android:id="@+id/action_home_to_pdf_to_ppt" app:destination="@id/pdfToPptFragment" />
+        <action android:id="@+id/action_home_to_pdf_to_excel" app:destination="@id/pdfToExcelFragment" />
+        <action android:id="@+id/action_home_to_pdf_to_image" app:destination="@id/pdfToImageFragment" />
+        <action android:id="@+id/action_home_to_pdf_to_pdfa" app:destination="@id/pdfToPdfaFragment" />
+        <action android:id="@+id/action_home_to_word_to_pdf" app:destination="@id/wordToPdfFragment" />
+        <action android:id="@+id/action_home_to_ppt_to_pdf" app:destination="@id/pptToPdfFragment" />
+        <action android:id="@+id/action_home_to_excel_to_pdf" app:destination="@id/excelToPdfFragment" />
+        <action android:id="@+id/action_home_to_image_to_pdf" app:destination="@id/imageToPdfFragment" />
+        <action android:id="@+id/action_home_to_html_to_pdf" app:destination="@id/htmlToPdfFragment" />
+        <action android:id="@+id/action_home_to_protect" app:destination="@id/protectFragment" />
+        <action android:id="@+id/action_home_to_unlock" app:destination="@id/unlockFragment" />
+        <action android:id="@+id/action_home_to_sign" app:destination="@id/signFragment" />
+        <action android:id="@+id/action_home_to_redact" app:destination="@id/redactFragment" />
+        <action android:id="@+id/action_home_to_rotate" app:destination="@id/rotateFragment" />
+        <action android:id="@+id/action_home_to_page_numbers" app:destination="@id/pageNumbersFragment" />
+        <action android:id="@+id/action_home_to_watermark" app:destination="@id/watermarkFragment" />
+        <action android:id="@+id/action_home_to_metadata" app:destination="@id/metadataFragment" />
+        <action android:id="@+id/action_home_to_repair" app:destination="@id/repairFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recentFragment"
+        android:name="com.pdfox.app.ui.recent.RecentFragment"
+        android:label="@string/nav_recent"
+        tools:layout="@layout/fragment_recent">
+        <action
+            android:id="@+id/action_recentFragment_to_pdfViewerFragment"
+            app:destination="@id/pdfViewerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.pdfox.app.ui.settings.SettingsFragment"
+        android:label="@string/nav_settings"
+        tools:layout="@layout/fragment_settings" />
+
+    <!-- Tool Selection (for category browsing) -->
+    <fragment
+        android:id="@+id/toolSelectionFragment"
+        android:name="com.pdfox.app.ui.home.ToolSelectionFragment"
+        android:label="Tool Selection"
+        tools:layout="@layout/fragment_tool_selection">
+        <argument
+            android:name="category"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+
+    <!-- Individual Tools -->
+    <fragment
+        android:id="@+id/mergeFragment"
+        android:name="com.pdfox.app.ui.tools.merge.MergeFragment"
+        android:label="@string/tool_merge"
+        tools:layout="@layout/fragment_tool_file_selection" />
+
+    <fragment
+        android:id="@+id/splitFragment"
+        android:name="com.pdfox.app.ui.tools.split.SplitFragment"
+        android:label="@string/tool_split"
+        tools:layout="@layout/fragment_tool_file_selection" />
+
+    <fragment
+        android:id="@+id/removePagesFragment"
+        android:name="com.pdfox.app.ui.tools.removepages.RemovePagesFragment"
+        android:label="@string/tool_remove_pages"
+        tools:layout="@layout/fragment_tool_file_selection" />
+
+    <fragment
+        android:id="@+id/extractPagesFragment"
+        android:name="com.pdfox.app.ui.tools.extractpages.ExtractPagesFragment"
+        android:label="@string/tool_extract_pages"
+        tools:layout="@layout/fragment_tool_file_selection" />
+
+    <fragment
+        android:id="@+id/organizePagesFragment"
+        android:name="com.pdfox.app.ui.tools.organizepages.OrganizePagesFragment"
+        android:label="@string/tool_organize_pages"
+        tools:layout="@layout/fragment_tool_file_selection" />
+
+    <fragment
+        android:id="@+id/compressFragment"
+        android:name="com.pdfox.app.ui.tools.compress.CompressFragment"
+        android:label="@string/tool_compress"
+        tools:layout="@layout/fragment_tool_file_selection" />
+
+    <fragment
+        android:id="@+id/pdfToWordFragment"
+        android:name="com.pdfox.app.ui.tools.pdftoword.PdfToWordFragment"
+        android:label="@string/tool_pdf_to_word"
+        tools:layout="@layout/fragment_tool_file_selection" />
+
+    <fragment
+        android:id="@+id/pdfToPptFragment"
+        android:name="com.pdfox.app.ui.tools.pdftoppt.PdfToPptFragment"
+        android:label="@string/tool_pdf_to_ppt"
+        tools:layout="@layout/fragment_tool_file_selection" />
+
+    <fragment
+        android:id="@+id/pdfToExcelFragment"
+        android:name="com.pdfox.app.ui.tools.pdftoexcel.PdfToExcelFragment"
+        android:label="@string/tool_pdf_to_excel"
+        tools:layout="@layout/fragment_tool_file_selection" />
+
+    <fragment
+        android:id="@+id/pdfToImageFragment"
+        android:name="com.pdfox.app.ui.tools.pdftoimage.PdfToImageFragment"
+        android:label="@string/tool_pdf_to_image"
+        tools:layout="@layout/fragment_tool_file_selection" />
+
+    <fragment
+        android:id="@+id/pdfToPdfaFragment"
+        android:name="com.pdfox.app.ui.tools.pdftopdfa.PdfToPdfaFragment"
+        android:label="@string/tool_pdf_to_pdfa"
+        tools:layout="@layout/fragment_tool_file_selection" />
+
+    <fragment
+        android:id="@+id/wordToPdfFragment"
+        android:name="com.pdfox.app.ui.tools.wordtopdf.WordToPdfFragment"
+        android:label="@string/tool_word_to_pdf"
+        tools:layout="@layout/fragment_tool_file_selection" />
+
+    <fragment
+        android:id="@+id/pptToPdfFragment"
+        android:name="com.pdfox.app.ui.tools.ppttopdf.PptToPdfFragment"
+        android:label="@string/tool_ppt_to_pdf"
+        tools:layout="@layout/fragment_tool_file_selection" />
+
+    <fragment
+        android:id="@+id/excelToPdfFragment"
+        android:name="com.pdfox.app.ui.tools.exceltopdf.ExcelToPdfFragment"
+        android:label="@string/tool_excel_to_pdf"
+        tools:layout="@layout/fragment_tool_file_selection" />
+
+    <fragment
+        android:id="@+id/imageToPdfFragment"
+        android:name="com.pdfox.app.ui.tools.imagetopdf.ImageToPdfFragment"
+        android:label="@string/tool_image_to_pdf"
+        tools:layout="@layout/fragment_tool_file_selection" />
+
+    <fragment
+        android:id="@+id/htmlToPdfFragment"
+        android:name="com.pdfox.app.ui.tools.htmltopdf.HtmlToPdfFragment"
+        android:label="@string/tool_html_to_pdf"
+        tools:layout="@layout/fragment_html_to_pdf" />
+
+    <fragment
+        android:id="@+id/protectFragment"
+        android:name="com.pdfox.app.ui.tools.protect.ProtectFragment"
+        android:label="@string/tool_protect"
+        tools:layout="@layout/fragment_tool_file_selection" />
+
+    <fragment
+        android:id="@+id/unlockFragment"
+        android:name="com.pdfox.app.ui.tools.unlock.UnlockFragment"
+        android:label="@string/tool_unlock"
+        tools:layout="@layout/fragment_tool_file_selection" />
+
+    <fragment
+        android:id="@+id/signFragment"
+        android:name="com.pdfox.app.ui.tools.sign.SignFragment"
+        android:label="@string/tool_sign"
+        tools:layout="@layout/fragment_tool_file_selection" />
+
+    <fragment
+        android:id="@+id/redactFragment"
+        android:name="com.pdfox.app.ui.tools.redact.RedactFragment"
+        android:label="@string/tool_redact"
+        tools:layout="@layout/fragment_tool_file_selection" />
+
+    <fragment
+        android:id="@+id/rotateFragment"
+        android:name="com.pdfox.app.ui.tools.rotate.RotateFragment"
+        android:label="@string/tool_rotate"
+        tools:layout="@layout/fragment_tool_file_selection" />
+
+    <fragment
+        android:id="@+id/pageNumbersFragment"
+        android:name="com.pdfox.app.ui.tools.pagenumbers.PageNumbersFragment"
+        android:label="@string/tool_page_numbers"
+        tools:layout="@layout/fragment_tool_file_selection" />
+
+    <fragment
+        android:id="@+id/watermarkFragment"
+        android:name="com.pdfox.app.ui.tools.watermark.WatermarkFragment"
+        android:label="@string/tool_watermark"
+        tools:layout="@layout/fragment_tool_file_selection" />
+
+    <fragment
+        android:id="@+id/metadataFragment"
+        android:name="com.pdfox.app.ui.tools.metadata.MetadataFragment"
+        android:label="@string/tool_metadata"
+        tools:layout="@layout/fragment_tool_file_selection" />
+
+    <fragment
+        android:id="@+id/repairFragment"
+        android:name="com.pdfox.app.ui.tools.repair.RepairFragment"
+        android:label="@string/tool_repair"
+        tools:layout="@layout/fragment_tool_file_selection" />
+
+    <!-- Tool Options Screen (generic) -->
+    <fragment
+        android:id="@+id/toolOptionsFragment"
+        android:name="com.pdfox.app.ui.tools.ToolOptionsFragment"
+        android:label="Tool Options"
+        tools:layout="@layout/fragment_tool_options">
+        <argument
+            android:name="toolType"
+            app:argType="string" />
+        <argument
+            android:name="fileUris"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_toolOptionsFragment_to_processingFragment"
+            app:destination="@id/processingFragment" />
+    </fragment>
+
+    <!-- Processing Screen -->
+    <fragment
+        android:id="@+id/processingFragment"
+        android:name="com.pdfox.app.ui.processing.ProcessingFragment"
+        android:label="Processing"
+        tools:layout="@layout/fragment_processing">
+        <argument
+            android:name="toolType"
+            app:argType="string" />
+        <argument
+            android:name="fileUris"
+            app:argType="string" />
+        <argument
+            android:name="optionsJson"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_processingFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+
+    <!-- Result Screen -->
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.pdfox.app.ui.result.ResultFragment"
+        android:label="Result"
+        tools:layout="@layout/fragment_result">
+        <argument
+            android:name="outputFilePath"
+            app:argType="string" />
+        <argument
+            android:name="toolName"
+            app:argType="string" />
+        <argument
+            android:name="inputFileName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_resultFragment_to_pdfViewerFragment"
+            app:destination="@id/pdfViewerFragment" />
+    </fragment>
+
+    <!-- PDF Viewer -->
+    <fragment
+        android:id="@+id/pdfViewerFragment"
+        android:name="com.pdfox.app.ui.viewer.PdfViewerFragment"
+        android:label="PDF Viewer"
+        tools:layout="@layout/fragment_pdf_viewer">
+        <argument
+            android:name="filePath"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

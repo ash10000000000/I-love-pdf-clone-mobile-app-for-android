@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        app:title="@string/settings_appearance"
+        app:iconSpaceReserved="false">
+
+        <ListPreference
+            app:key="theme_mode"
+            app:title="@string/settings_theme"
+            app:summary="@string/settings_theme_summary"
+            app:entries="@array/theme_entries"
+            app:entryValues="@array/theme_values"
+            app:defaultValue="system"
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="@string/settings_storage"
+        app:iconSpaceReserved="false">
+
+        <Preference
+            app:key="save_location"
+            app:title="@string/settings_save_location"
+            app:summary="@string/settings_save_location_summary"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="@string/settings_about"
+        app:iconSpaceReserved="false">
+
+        <Preference
+            app:key="version"
+            app:title="@string/settings_version"
+            app:summary="1.0.0"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            app:key="privacy"
+            app:title="@string/settings_privacy"
+            app:summary="https://pdfox.app/privacy"
+            app:iconSpaceReserved="false">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://pdfox.app/privacy" />
+        </Preference>
+    </PreferenceCategory>
+</PreferenceScreen>

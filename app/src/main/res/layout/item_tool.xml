@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_tool"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/spacing_small"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardBackgroundColor="@color/surface"
+    app:cardCornerRadius="@dimen/tool_card_corner_radius"
+    app:cardElevation="@dimen/elevation_card">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Left accent border -->
+        <View
+            android:id="@+id/view_accent"
+            android:layout_width="@dimen/tool_card_accent_width"
+            android:layout_height="match_parent"
+            android:background="@color/primary" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/spacing_medium">
+
+            <!-- Icon with colored background -->
+            <FrameLayout
+                android:id="@+id/fl_icon_bg"
+                android:layout_width="@dimen/tool_card_icon_bg_size"
+                android:layout_height="@dimen/tool_card_icon_bg_size"
+                android:background="@drawable/bg_icon_circle">
+
+                <ImageView
+                    android:id="@+id/iv_tool_icon"
+                    android:layout_width="@dimen/tool_card_icon_size"
+                    android:layout_height="@dimen/tool_card_icon_size"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/app_name"
+                    android:padding="8dp"
+                    android:tint="@color/primary"
+                    tools:src="@android:drawable/ic_menu_add" />
+            </FrameLayout>
+
+            <!-- Text Content -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_medium"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_tool_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceTitleMedium"
+                    android:textColor="@color/on_surface"
+                    android:textStyle="bold"
+                    tools:text="Merge PDF" />
+
+                <TextView
+                    android:id="@+id/tv_tool_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textAppearance="?attr/textAppearanceBodySmall"
+                    android:textColor="@color/on_surface_variant"
+                    tools:text="Combine multiple PDFs into one" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Instructions -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        android:gravity="center"
+        android:padding="@dimen/spacing_medium"
+        android:text="Drag to reorder, tap buttons to rotate"
+        android:textAppearance="?attr/textAppearanceTitleMedium"
+        android:textColor="@color/on_primary" />
+
+    <!-- Page Grid -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_pages"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:padding="@dimen/spacing_small" />
+
+    <!-- Save Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_reorder_and_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_medium"
+        android:enabled="false"
+        android:text="Save Reordered PDF"
+        app:icon="@android:drawable/ic_menu_save" />
+
+</LinearLayout>

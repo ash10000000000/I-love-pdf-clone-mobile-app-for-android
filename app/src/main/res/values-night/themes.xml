@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.PDFox" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Primary colors (dark theme) -->
+        <item name="colorPrimary">#93C5FD</item>
+        <item name="colorOnPrimary">#003061</item>
+        <item name="colorPrimaryContainer">#00478A</item>
+        
+        <!-- Secondary colors (dark theme) -->
+        <item name="colorSecondary">#F2B8B5</item>
+        <item name="colorOnSecondary">#601A15</item>
+        <item name="colorSecondaryContainer">#8B312A</item>
+        
+        <!-- Tertiary colors (dark theme) -->
+        <item name="colorTertiary">#9ED7AC</item>
+        <item name="colorOnTertiary">#05381A</item>
+        <item name="colorTertiaryContainer">#1F512F</item>
+        
+        <!-- Error colors (dark theme) -->
+        <item name="colorError">#F2B8B5</item>
+        <item name="colorErrorContainer">#8C1D18</item>
+        
+        <!-- Surface & background (dark theme) -->
+        <item name="colorSurface">#1E1F20</item>
+        <item name="colorOnSurface">#E3E3E4</item>
+        <item name="colorOnSurfaceVariant">#C4C7C5</item>
+        <item name="android:colorBackground">#111318</item>
+        
+        <!-- System bars (dark theme) -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        
+        <!-- Remove action bar -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>

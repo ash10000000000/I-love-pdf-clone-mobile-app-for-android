@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.recent.RecentFragment">
+
+    <!-- Recent Files RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_recent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:padding="@dimen/spacing_small"
+        tools:listitem="@layout/item_recent_file" />
+
+    <!-- Empty State -->
+    <LinearLayout
+        android:id="@+id/ll_empty_state"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:padding="@dimen/spacing_large"
+        tools:visibility="visible">
+
+        <!-- Empty Illustration -->
+        <ImageView
+            android:id="@+id/iv_empty"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:contentDescription="No files"
+            android:src="@android:drawable/ic_menu_gallery"
+            app:tint="@color/on_surface_variant" />
+
+        <!-- No Files Text -->
+        <TextView
+            android:id="@+id/tv_no_files"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:text="No recent files yet"
+            android:textAppearance="?attr/textAppearanceHeadlineSmall"
+            android:textColor="@color/on_surface" />
+
+        <!-- Description Text -->
+        <TextView
+            android:id="@+id/tv_no_files_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:gravity="center"
+            android:text="Your recently processed files will appear here"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="@color/on_surface_variant" />
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
