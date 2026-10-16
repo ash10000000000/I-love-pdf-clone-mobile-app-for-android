@@ -1,4 +1,4 @@
-# PDFox - Complete PDF Utility App for Android
+# DocuEase - Complete PDF Utility App for Android
 
 [![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)]()
 [![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white)]()
@@ -7,7 +7,7 @@
 [![Target SDK](https://img.shields.io/badge/Target%20SDK-34-blue.svg)]()
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> **PDFox** is a full-featured native Android PDF utility app that replicates the complete functionality of **ilovepdf.com**, redesigned with Material You (Material Design 3) principles, following Google-style UI patterns similar to Google Drive, Google Docs, and Google Photos.
+> **DocuEase** is a full-featured native Android PDF utility app that replicates the complete functionality of **ilovepdf.com**, redesigned with Material You (Material Design 3) principles, following Google-style UI patterns similar to Google Drive, Google Docs, and Google Photos.
 
 ---
 
